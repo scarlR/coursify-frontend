@@ -1,11 +1,11 @@
 import React from "react";
-import Sidebar from "./Sidebar";
+import SideBar from "./SideBar";
 
 
 const Layout = ({ children }) => {
   return (
     <div className="flex   w-full ">
-      <Sidebar />
+      <SideBar />
       <div className="mx-auto my-12">{children}</div>
     </div>
   );

@@ -6,7 +6,7 @@ import { FaBook, FaUserAlt } from "react-icons/fa";
 import { UserData } from "../../context/UserContext";
 
 
-const Sidebar = () => {
+const SideBar = () => {
   const { user } = UserData();
   return (
     <div className="bg-blue-200 w-16  sm:w-44 ">
@@ -42,4 +42,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default SideBar;
