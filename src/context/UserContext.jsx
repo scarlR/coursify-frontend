@@ -16,7 +16,7 @@ const UserContext = createContext();
         setBtnLoading(true);
         try {
             const { data } = await axios.post(
-                "http://localhost:3001/api/user/loginUser",
+                `${serverUrl}/api/user/loginUser`,
                 {
                     email,
                     password,
