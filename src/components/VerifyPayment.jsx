@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { serverUrl } from '../main';
 import { CourseData } from '../context/CourseContext';
-import { UserData } from '../context/userContext';
+import { UserData } from '../context/UserContext';
 import toast from "react-hot-toast";
 
 const VerifyPayment = () => {
