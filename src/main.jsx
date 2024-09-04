@@ -5,7 +5,7 @@ import './index.css'
 import { UserContextProvider } from './context/userContext.jsx'
 import { CourseContextProvider } from './context/CourseContext.jsx'
 
-export const serverUrl = "http://localhost:3001";
+export const serverUrl = "https://coursify-backend-jn8l.onrender.com";
 createRoot(document.getElementById("root")).render(
     
         <UserContextProvider>
