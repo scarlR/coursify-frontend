@@ -16,11 +16,17 @@ const UserContext = createContext();
         setBtnLoading(true);
         try {
             const { data } = await axios.post(
-                `${serverUrl}/api/user/loginUser`,
-                {
-                    email,
-                    password,
-                }
+              `${serverUrl}/api/user/loginUser`,
+              {
+                email,
+                password,
+              },
+              {
+                headers: {
+                      "Content-Type": "application/json",
+                   
+                },
+              }
             );
             toast.success(data.message);
             localStorage.setItem("token", data.token);
