@@ -1,5 +1,5 @@
 import { NavLink ,Link} from "react-router-dom";
-import { UserData } from "../context/userContext";
+import { UserData } from "../context/UserContext";
 
 const Header = () => {
     const { isAuth } = UserData();

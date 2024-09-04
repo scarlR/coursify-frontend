@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { AiFillHome, AiOutlineLogout } from "react-icons/ai";
 import { FaBook, FaUserAlt } from "react-icons/fa";
-import { UserData } from "../../context/userContext";
+import { UserData } from "../../context/UserContext";
 
 
 const Sidebar = () => {

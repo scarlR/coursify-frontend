@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { UserData } from "../../context/userContext";
+import { UserData } from "../../context/UserContext";
 const Verify = () => {
 
     const [otp, setOtp] = useState(null);

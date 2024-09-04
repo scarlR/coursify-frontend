@@ -6,7 +6,7 @@ import toast, { Toaster } from "react-hot-toast";
 
 const UserContext = createContext();
 
-export const UserContextProvider = ({ children }) => {
+ const UserContextProvider = ({ children }) => {
     const [user, setUser] = useState([]);
     const [isAuth, setIsAuth] = useState(false);
     const [btnLoading, setBtnLoading] = useState(false);
@@ -130,3 +130,4 @@ export const UserContextProvider = ({ children }) => {
 };
 
 export const UserData = () => useContext(UserContext);
+export default UserContextProvider;

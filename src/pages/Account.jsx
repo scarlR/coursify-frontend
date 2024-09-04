@@ -1,5 +1,5 @@
 import { IoMdLogOut } from "react-icons/io";
-import { UserData } from "../context/userContext";
+import { UserData } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
 
 import toast from "react-hot-toast";

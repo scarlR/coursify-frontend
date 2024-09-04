@@ -1,5 +1,5 @@
 import {  useNavigate } from "react-router-dom";
-import { UserData } from "../context/userContext";
+import { UserData } from "../context/UserContext";
 import { serverUrl } from "../main";
 import { CourseData } from "../context/CourseContext";
 import toast from "react-hot-toast";
