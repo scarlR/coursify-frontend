@@ -10,39 +10,43 @@ const CourseDescription = ({ user }) => {
     const params = useParams();
     const navigate = useNavigate();
     const { fetchCourse,course,fetchMyCourse} = CourseData();
-     console.log(course)
+    console.log(course)
+    
+    const checkoutHandler = async () => {
+      const token = localStorage.getItem("token");
+      setLoading(true);
+      const stripe = await loadStripe(
+        "pk_test_51PqrrTIbtPjP9VqFS50R44MR3pKCV33FKoEcu0uChulx94VNNPEccAiuPq3myNNrETefs5ZhUAWEPfFVDL3aCK5N003EcqVBPG"
+      );
+      const response = await axios.post(
+        `${serverUrl}/api/course/checkout/${params.id}`,
+        {},
+        {
+          headers: {
+            token,
+          },
+        }
+      );
+      console.log(response.data);
+
+      const result = stripe.redirectToCheckout({
+        sessionId: response.data.id,
+      });
+
+      if (result.error) {
+        console.log(result.error);
+      }
+    };
     
     useEffect(() => {
         fetchCourse(params.id)
         fetchMyCourse();
     }, [])
     
-    const checkoutHandler = async () => {
-        const token = localStorage.getItem("token");
-        setLoading(true);
-        const stripe = await loadStripe("pk_test_51PqrrTIbtPjP9VqFS50R44MR3pKCV33FKoEcu0uChulx94VNNPEccAiuPq3myNNrETefs5ZhUAWEPfFVDL3aCK5N003EcqVBPG");
-        const response = await axios.post(`${serverUrl}/api/course/checkout/${params.id}`, {}, {
-            headers: {
-                token,
-            }
-        })
-        console.log(response.data)
-        
-         const result = stripe.redirectToCheckout({ 
-      sessionId: response.data.id, 
-         }); 
-        console.log("kooooo");
-        
- 
-    if (result.error) { 
-      console.log(result.error); 
-    } else {
-        console.log("redirection")
-    }
-    }
+    
 
   return (
-      <div className='mt-16'>{
+      <div className='my-16'>{
          
           course && (
           <div>

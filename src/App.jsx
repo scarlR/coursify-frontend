@@ -50,8 +50,8 @@ function App() {
                 element={isAuth ? <CourseDescription user={user} /> : <Login />}
               />
               <Route
-                path="/verify/:sessionId"
-                element={isAuth ? <VerifyPayment /> : <Login />}
+                path="/success/:sessionId"
+                element={isAuth ? <Success /> : <Login />}
               />
               <Route path="/cancel" element={isAuth ? <Cancel /> : <Login />} />
               <Route
